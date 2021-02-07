@@ -16,6 +16,7 @@ const customConfig = {
   d: {
     d1: 0,
   },
+  color: 0xffffff
 }
 
 // adding directly to gui
@@ -37,6 +38,9 @@ folder.add(customConfig.d, "d1", 0, 10, 0.01)
 
 // boolean
 gui.add(customConfig, "boolean")
+
+// color
+gui.addColor(customConfig, "color").onChange(() => material.color.set(customConfig.color))
 
 // on update
 gui.add(customConfig, "b", 0, 10, 0.01).onChange(() => {
